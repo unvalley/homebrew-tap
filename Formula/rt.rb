@@ -12,7 +12,7 @@ class Rt < Formula
   end
 
   def install
-    bin.install "rt-cli-aarch64-apple-darwin-v0.1.6/rt" => "rt"
+    bin.install "rt"
   end
 
   test do

@@ -1,15 +1,18 @@
 class Rt < Formula
   desc "rt is a CLI to run tasks interactively across different task runners"
   homepage "https://github.com/unvalley/rt"
-  url "https://github.com/unvalley/rt/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "a924c3d725da61a26b2e4f886d7c765cf7c68d4abd7c68fb6ab542c58a945434"
+  version "0.1.6"
   license "MIT"
-  head "https://github.com/unvalley/rt.git", branch: "main"
 
-  depends_on "rust" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/unvalley/rt/releases/download/v0.1.6/rt-cli-aarch64-apple-darwin-v0.1.6.tgz"
+      sha256 "aa34807d8ac7f8421f0f63b97914e876fcf4389fcfb4b4839fc40e80bc413f12"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "rt-cli-aarch64-apple-darwin-v0.1.6/rt" => "rt"
   end
 
   test do

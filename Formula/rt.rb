@@ -1,5 +1,5 @@
 class Rt < Formula
-  desc "CLI to run tasks interactively across different task runners"
+  desc "rt is a CLI to run tasks interactively across different task runners"
   homepage "https://github.com/unvalley/rt"
   url "https://github.com/unvalley/rt/archive/refs/tags/v0.1.6.tar.gz"
   sha256 "a924c3d725da61a26b2e4f886d7c765cf7c68d4abd7c68fb6ab542c58a945434"
